@@ -1,10 +1,11 @@
 import { AppBar, IconButton, makeStyles, Toolbar } from "@material-ui/core";
 import React from "react";
 import SortIcon from "@material-ui/icons/Sort";
+import "././Navbar.scss";
 
 const useStyle = makeStyles((theme) => ({
   appbar: {
-    background: "none",
+    backgroundColor: "transparent",
   },
   appbarWrapper: {
     width: "80%",
@@ -12,7 +13,7 @@ const useStyle = makeStyles((theme) => ({
   },
   appbarTitle: {
     flexGrow: "1",
-    color: "black",
+    color: "white",
   },
   icon: {
     color: "black",
@@ -20,6 +21,8 @@ const useStyle = makeStyles((theme) => ({
   },
   colorText: {
     color: "#fff",
+    fontSize: "20px",
+    marginRight: "1000px",
   },
   container: {
     textAlign: "center",
@@ -32,6 +35,12 @@ const useStyle = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "4rem",
   },
+  img: {
+    display: "flex",
+    alinItem: "center",
+    justifyContent: "center",
+    fontSize: "20px",
+  },
 }));
 
 const Navbar = () => {
@@ -41,11 +50,8 @@ const Navbar = () => {
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle} className="titleInfo">
-            Visionify<span className={classes.colorText}>.ai</span>
+            Data<span className={classes.colorText}>Splitter..</span>
           </h1>
-          <IconButton>
-            <SortIcon className={classes.icon} />
-          </IconButton>
         </Toolbar>
       </AppBar>
     </div>

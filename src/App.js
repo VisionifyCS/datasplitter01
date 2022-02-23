@@ -1,13 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, CssBaseline, IconButton } from "@material-ui/core";
-import HomePage from "../src/pages/HomePage";
 import ImageTrain from "./pages/components/ImageTrain";
 import "../src/styles/style.css";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { Link as Scroll } from "react-scroll";
 import Navbar from "./pages/components/Navbar";
+import MainView from "./pages/components/MainView";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +43,8 @@ export default function App() {
     <div className="root">
       <CssBaseline />
       <Navbar />
-      <HomePage />
+      <CssBaseline />
+      <MainView />
       <ImageTrain />
       <br></br>
     </div>

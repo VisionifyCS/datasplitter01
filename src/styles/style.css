@@ -5,9 +5,10 @@
   animation-name: example;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+  background-color: #0b0c0c;
 }
 
-@keyframes example {
+/* @keyframes example {
   0% {
     background-color: #4ac8b8;
     left: 0px;
@@ -33,7 +34,7 @@
     left: 0px;
     top: 0px;
   }
-}
+} */
 
 .heading {
   text-align: center;

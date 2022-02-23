@@ -71,6 +71,7 @@ function ImageTrain() {
   const [files, setFiles] = useState([]);
   const [minValidate, setminValidate] = useState(70);
   const [maxValidate, setmaxValidate] = useState(90);
+  const [inputValue, setInputValue] = useState("upload");
   // const [otherValue, setOtherValue] = useState(100);
 
   const [trainRange, setTrainRange] = useState(70);
@@ -174,6 +175,7 @@ function ImageTrain() {
             multiple
             type="file"
             onChange={(e) => covertBaseImages(e.target.files)}
+            onChange={(e) => covertBaseImages(e.target.files)}
           ></input>
           <button style={{ color: "#fff" }}>
             <i>
@@ -181,7 +183,9 @@ function ImageTrain() {
             </i>
             Click Here
           </button>
+          {/* <p>{inputValue.length}</p> */}
         </div>
+        {/* <p>{inputValue}</p> */}
         <div className="main-selector">
           <p>Rebalance your Dataset</p>
           <Typography gutterBottom className="typo-info">

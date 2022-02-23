@@ -1,0 +1,111 @@
+.main-info {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.mainBox-info {
+  width: 230px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 40, 25);
+  color: #fff;
+  transition: transform 0.5s; /* Animation */
+  flex-direction: column;
+  font-size: 15px;
+  cursor: default;
+  border-radius: 1em;
+}
+
+.main-info :hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: #fff;
+  color: black;
+}
+
+.main-info1 {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+.mainBox-info1 {
+  width: 230px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 40, 25);
+  color: #fff;
+  transition: transform 0.5s; /* Animation */
+  flex-direction: column;
+  font-size: 15px;
+  cursor: default;
+  border-radius: 1em;
+}
+
+.main-info1 :hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color: #fff;
+  color: black;
+}
+.scroll-box-div {
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 120px;
+}
+
+.div-scroll {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30pc;
+  background-color: #fff;
+}
+
+.scroll-box {
+  background-color: transparent;
+  transition: transform 0.5s; /* Animation */
+  color: #fff;
+}
+
+.info-title {
+  color: #fff;
+}
+
+.Arrow-box {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 207, 152);
+  transition: transform 0.8s; /* Animation */
+  flex-direction: column;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 1em;
+  color: black;
+  font-weight: 1000;
+}
+
+.Arrow-box:hover {
+  color: black;
+  background-color: #fff;
+}

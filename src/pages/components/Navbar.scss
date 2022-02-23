@@ -6,8 +6,13 @@
   background: transparent;
   text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(1, 1, 10),
     0 0 0.2em rgb(13, 13, 14);
-  color: black;
+  color: orange;
   font: 3em Georgia, serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
 }
 .white-text-with-blue-shadow {
   text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(1, 1, 10),
