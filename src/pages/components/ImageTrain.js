@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { saveAs } from "file-saver";
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { useDropzone } from "react-dropzone";
 import "../components/image.scss";
@@ -217,14 +217,16 @@ function ImageTrain() {
             Download Images
           </Button>
         </div>
+        <p className="main">All type of images supports</p>
+      </div>
 
+      <Box>
         <div className="seperat-div">
-          <p className="main">All type of images supports</p>
           <Scroll to="header" smooth={true}>
-            <Button className="btn-info">Go Back</Button>
+            <Box className="btn-info">Go Back</Box>
           </Scroll>
         </div>
-      </div>
+      </Box>
     </>
   );
 }
