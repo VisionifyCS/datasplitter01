@@ -171,21 +171,22 @@ function ImageTrain() {
     <>
       <div className="file-card" id="place-to-visit">
         <div className="file-inputs">
+          <p>Upload Your Files Here</p>
           <input
             multiple
             type="file"
             onChange={(e) => covertBaseImages(e.target.files)}
-            onChange={(e) => covertBaseImages(e.target.files)}
+            className="upload-box"
           ></input>
-          <button style={{ color: "#fff" }}>
+          {/* <button style={{ color: "#fff" }}>
             <i>
               <FontAwesomeIcon icon={faPlus} />
             </i>
             Click Here
-          </button>
-          {/* <p>{inputValue.length}</p> */}
+          </button> */}
         </div>
-        {/* <p>{inputValue}</p> */}
+        <p>{covertBaseImages}</p>
+
         <div className="main-selector">
           <p>Rebalance your Dataset</p>
           <Typography gutterBottom className="typo-info">
