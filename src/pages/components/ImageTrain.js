@@ -74,9 +74,9 @@ function ImageTrain() {
   const [inputValue, setInputValue] = useState("upload");
   // const [otherValue, setOtherValue] = useState(100);
 
-  const [trainRange, setTrainRange] = useState(70);
-
-  const [ValidRange, setValidRange] = useState(90);
+  const [trainRange, setTrainRange] = useState(0);
+  const [ValidRange, setValidRange] = useState(0);
+  const [testRange, setTestRange] = useState(0);
 
   let totalImages;
   let trainImagesLen = 0;
@@ -109,10 +109,6 @@ function ImageTrain() {
     // console.log("change");
     setminValidate(newValue[0]);
     setmaxValidate(newValue[1]);
-    // setOtherValue(newValue[2]);
-    setTrainRange(newValue[0]);
-    setValidRange(newValue[1]);
-    // settestRange(newValue[2]);
     totalImages = files.length;
     trainImagesLen = Math.floor(totalImages * (minValidate / 100));
     trainImages = files.slice(0, trainImagesLen);
@@ -178,12 +174,6 @@ function ImageTrain() {
             onChange={(e) => covertBaseImages(e.target.files)}
             className="upload-box"
           ></input>
-          {/* <button style={{ color: "#fff" }}>
-            <i>
-              <FontAwesomeIcon icon={faPlus} />
-            </i>
-            Click Here
-          </button> */}
         </div>
         <p>{covertBaseImages}</p>
 
@@ -198,14 +188,14 @@ function ImageTrain() {
               <p>Validate</p>
               <p>{ValidRange}</p>
             </div>
-            {/* <div>
-              <p>{testSlider}</p>
+            <div>
+              <p>Test</p>
               <p>{testRange}</p>
-            </div> */}
+            </div>
           </Typography>
 
           <PrettoSlider
-            // valueLabelDisplay="auto"
+            valueLabelDisplay="auto"
             aria-label="pretto slider"
             value={[minValidate, maxValidate]}
             step={10}
