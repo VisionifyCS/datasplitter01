@@ -192,16 +192,28 @@ function ImageTrain() {
           <Typography gutterBottom className="typo-info">
             <div>
               <p>Train</p>
-              <p>{trainRange}</p>
+              <p
+                style={{
+                  alignItem: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
+              >
+                {trainRange}
+              </p>
             </div>
             <div>
               <p>Validate</p>
-              <p>{ValidRange}</p>
+              <p
+                style={{
+                  alignItem: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
+              >
+                {ValidRange}
+              </p>
             </div>
-            {/* <div>
-              <p>{testSlider}</p>
-              <p>{testRange}</p>
-            </div> */}
           </Typography>
 
           <PrettoSlider
