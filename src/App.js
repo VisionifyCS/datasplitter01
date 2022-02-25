@@ -8,6 +8,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { Link as Scroll } from "react-scroll";
 import Navbar from "./pages/components/Navbar";
 import MainView from "./pages/components/MainView";
+import ImageUploader from "./pages/components/ImageUploader";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -192,28 +192,16 @@ function ImageTrain() {
           <Typography gutterBottom className="typo-info">
             <div>
               <p>Train</p>
-              <p
-                style={{
-                  alignItem: "center",
-                  justifyContent: "center",
-                  display: "flex",
-                }}
-              >
-                {trainRange}
-              </p>
+              <p>{trainRange}</p>
             </div>
             <div>
               <p>Validate</p>
-              <p
-                style={{
-                  alignItem: "center",
-                  justifyContent: "center",
-                  display: "flex",
-                }}
-              >
-                {ValidRange}
-              </p>
+              <p>{ValidRange}</p>
             </div>
+            {/* <div>
+              <p>{testSlider}</p>
+              <p>{testRange}</p>
+            </div> */}
           </Typography>
 
           <PrettoSlider
@@ -227,10 +215,10 @@ function ImageTrain() {
         </div>
         <div className="btn-wrapper">
           <Button onClick={() => exportZip()} className="btn-default">
-            Download Images
+            Download
           </Button>
         </div>
-        <p className="main">All type of images supports</p>
+        <p className="main">All type of files supports here</p>
       </div>
 
       <Box>

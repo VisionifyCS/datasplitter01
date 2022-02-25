@@ -44,7 +44,7 @@ const MainView = () => {
           <Box className="mainBox-info">
             <PrecisionManufacturingIcon style={{ fontSize: "70px" }} />
             <br />
-            use AI to make your work more productive
+            Use AI to make your work more productive
           </Box>
           <Box className="mainBox-info">
             <BrowserUpdatedOutlinedIcon style={{ fontSize: "70px" }} />
@@ -54,7 +54,7 @@ const MainView = () => {
           <Box className="mainBox-info">
             <LockOutlinedIcon style={{ fontSize: "70px" }} />
             <br />
-            we Don't share your images, because we don't send them anywhere
+            We Don't share your images, because we don't send them anywhere
           </Box>
         </div>
         <div className="main-info1">
