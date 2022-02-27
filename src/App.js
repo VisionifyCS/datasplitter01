@@ -8,12 +8,12 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { Link as Scroll } from "react-scroll";
 import Navbar from "./pages/components/Navbar";
 import MainView from "./pages/components/MainView";
-import ImageUploader from "./pages/components/ImageUploader";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundColor: "grey",
+    backgroundColor: "#0b0c0c",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },
@@ -41,13 +41,20 @@ const useStyles = makeStyles((theme) => ({
 export default function App() {
   const classes = useStyles();
   return (
-    <div className="root">
-      <CssBaseline />
-      <Navbar />
-      <CssBaseline />
-      <MainView />
-      <ImageTrain />
-      <br></br>
+    <div className={classes.root}>
+      <Router>
+        <Navbar />
+        <br />
+        <br />
+        <h1></h1>
+        <br />
+        <br />
+        <CssBaseline />
+        <Routes>
+          <Route path="/datasplitter01" element={<MainView />} />
+          <Route path="/datasplitter01/train" element={<ImageTrain />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

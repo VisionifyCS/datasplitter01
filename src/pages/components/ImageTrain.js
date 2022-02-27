@@ -11,6 +11,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Slider from "@material-ui/core/Slider";
 import { file } from "jszip";
 import { Link as Scroll } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 // import { file } from 'jszip';
 var zip = require("jszip")();
@@ -67,13 +68,12 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 function ImageTrain() {
+  let navigate = useNavigate();
   const classes = useStyle();
   const [files, setFiles] = useState([]);
   const [minValidate, setminValidate] = useState(70);
   const [maxValidate, setmaxValidate] = useState(90);
   const [inputValue, setInputValue] = useState("upload");
-  // const [otherValue, setOtherValue] = useState(100);
-
   const [trainRange, setTrainRange] = useState(0);
   const [ValidRange, setValidRange] = useState(0);
   const [testRange, setTestRange] = useState(0);
@@ -213,9 +213,14 @@ function ImageTrain() {
 
       <Box>
         <div className="seperat-div">
-          <Scroll to="header" smooth={true}>
-            <Box className="btn-info">Go Back</Box>
-          </Scroll>
+          <Box
+            className="btn-info"
+            onClick={() => {
+              navigate("/datasplitter01/");
+            }}
+          >
+            Go Back
+          </Box>
         </div>
       </Box>
     </>

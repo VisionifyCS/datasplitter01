@@ -20,6 +20,8 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import SupportOutlinedIcon from "@mui/icons-material/SupportOutlined";
 import SmartToyOutlinedIcon from "@mui/icons-material/SmartToyOutlined";
 
+import { useNavigate } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   goDown: {
     color: "black",
@@ -32,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MainView = () => {
+  let navigate = useNavigate();
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   useEffect(() => {
@@ -76,9 +79,14 @@ const MainView = () => {
         </div>
         <div className="scroll-box-div">
           <Box className="scroll-box">
-            <Scroll to="place-to-visit" smooth={true}>
-              <Box className="Arrow-box">Get Started</Box>
-            </Scroll>
+            <Box
+              className="Arrow-box"
+              onClick={() => {
+                navigate("/datasplitter01/train");
+              }}
+            >
+              Get Started
+            </Box>
           </Box>
         </div>
       </Container>
