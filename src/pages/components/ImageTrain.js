@@ -78,6 +78,8 @@ function ImageTrain() {
   const [ValidRange, setValidRange] = useState(0);
   const [testRange, setTestRange] = useState(0);
 
+  const [visible, setVisible] = useState(false);
+
   let totalImages;
   let trainImagesLen = 0;
   let validateImagesLen;
@@ -125,9 +127,11 @@ function ImageTrain() {
     totalImages = files.length;
     trainImagesLen = Math.floor(totalImages * (minValidate / 100));
     validateImagesLen = Math.floor(totalImages * (maxValidate / 100));
+    console.log(validateImagesLen);
+    console.log(trainImagesLen);
 
-    console.log(" train Images", trainImagesLen);
-    console.log(" Validate Images", validateImagesLen);
+    console.log(" train Images", trainImages.length);
+    console.log(" Validate Images", validateImages.length);
 
     trainImages = files.slice(0, trainImagesLen);
     validateImages = files.slice(trainImagesLen, validateImagesLen);
@@ -175,34 +179,57 @@ function ImageTrain() {
             className="upload-box"
           ></input>
         </div>
-        <p>{covertBaseImages}</p>
-
-        <div className="main-selector">
-          <p>Rebalance your Dataset</p>
-          <Typography gutterBottom className="typo-info">
-            <div>
-              <p>Train</p>
-              <p>{trainRange}</p>
-            </div>
-            <div>
-              <p>Validate</p>
-              <p>{ValidRange}</p>
-            </div>
-            <div>
-              <p>Test</p>
-              <p>{testRange}</p>
-            </div>
-          </Typography>
-
-          <PrettoSlider
-            valueLabelDisplay="auto"
-            aria-label="pretto slider"
-            value={[minValidate, maxValidate]}
-            step={10}
-            onChange={handlevalidateChange}
-            className="gutterBtn"
-          />
+        <p>
+          Rebalance Your Dataset, if Yes select or Defualt set at train = 70%,
+          Valid = 30%, test = 10%
+        </p>
+        <div className="input-div">
+          <div style={{ marginRight: "100px" }}>
+            Yes
+            <input
+              type="radio"
+              value="1"
+              name="isyes"
+              onClick={() => setVisible(true)}
+            />
+          </div>
+          <div>
+            No
+            <input
+              type="radio"
+              value="0"
+              name="isyes"
+              onClick={() => setVisible(false)}
+            />
+          </div>
         </div>
+        {visible && (
+          <div className="main-selector">
+            <Typography gutterBottom className="typo-info">
+              <div>
+                <p>Train</p>
+                <p>{trainRange}</p>
+              </div>
+              <div>
+                <p>Validate</p>
+                <p>{ValidRange}</p>
+              </div>
+              <div>
+                <p>Test</p>
+                <p>{testRange}</p>
+              </div>
+            </Typography>
+
+            <PrettoSlider
+              valueLabelDisplay="auto"
+              aria-label="pretto slider"
+              value={[minValidate, maxValidate]}
+              step={10}
+              onChange={handlevalidateChange}
+              className="gutterBtn"
+            />
+          </div>
+        )}
         <div className="btn-wrapper">
           <Button onClick={() => exportZip()} className="btn-default">
             Download
