@@ -180,7 +180,7 @@ function ImageTrain() {
           ></input>
         </div>
         <p>
-          Rebalance Your Dataset, if Yes select or Defualt set at train = 70%,
+          Rebalance Your Dataset, if Yes select or Default set at train = 70%,
           Valid = 30%, test = 10%
         </p>
         <div className="input-div">
