@@ -92,9 +92,9 @@ function ImageTrain() {
     trainImagesLen.current = Math.floor(totalImages * (minValidate / 100));
     validateImagesLen.current = Math.floor(totalImages * (maxValidate / 100));
 
-    setTrainRange(trainImagesLen.current)
-    setValidRange(validateImagesLen.current - trainImagesLen.current)
-    setTestRange(totalImages - validateImagesLen.current)
+    setTrainRange(trainImagesLen.current);
+    setValidRange(validateImagesLen.current - trainImagesLen.current);
+    setTestRange(totalImages - validateImagesLen.current);
   }, [files, minValidate, maxValidate, visible]);
 
   //input coverting multiple images to zip files
@@ -113,7 +113,7 @@ function ImageTrain() {
       };
     });
 
-    totalImages = arrayOfImages.length
+    totalImages = arrayOfImages.length;
     trainImagesLen.current = Math.floor(totalImages * (minValidate / 100));
     validateImagesLen.current = Math.floor(totalImages * (maxValidate / 100));
     setFiles(arrayOfImages);
@@ -131,7 +131,10 @@ function ImageTrain() {
     var validate = zip.folder("validate");
 
     trainImages = files.slice(0, trainImagesLen.current);
-    validateImages = files.slice(trainImagesLen.current, validateImagesLen.current);
+    validateImages = files.slice(
+      trainImagesLen.current,
+      validateImagesLen.current
+    );
     testImages = files.slice(validateImagesLen.current, totalImages);
 
     // Item showing in text file
