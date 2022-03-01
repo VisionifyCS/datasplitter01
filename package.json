@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "browser-image-compression": "^1.0.17",
     "file-save": "^0.2.0",
+    "file-saver": "^2.0.5",
     "jszip": "^3.7.1",
     "jszip-utils": "^0.1.0",
     "node-sass": "^7.0.1",

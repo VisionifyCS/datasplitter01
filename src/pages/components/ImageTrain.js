@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { saveAs } from "file-saver";
 import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
@@ -80,12 +80,22 @@ function ImageTrain() {
 
   const [visible, setVisible] = useState(false);
 
-  let totalImages;
-  let trainImagesLen = 0;
-  let validateImagesLen;
+  let totalImages = files.length;
+  let trainImagesLen = useRef(0);
+  let validateImagesLen = useRef(0);
   let trainImages = [];
   let validateImages = [];
   let testImages = [];
+
+  useEffect(() => {
+    totalImages = files.length;
+    trainImagesLen.current = Math.floor(totalImages * (minValidate / 100));
+    validateImagesLen.current = Math.floor(totalImages * (maxValidate / 100));
+
+    setTrainRange(trainImagesLen.current)
+    setValidRange(validateImagesLen.current - trainImagesLen.current)
+    setTestRange(totalImages - validateImagesLen.current)
+  }, [files, minValidate, maxValidate, visible]);
 
   //input coverting multiple images to zip files
   const covertBaseImages = (Images) => {
@@ -103,41 +113,26 @@ function ImageTrain() {
       };
     });
 
-    // setFiles({...files, arrayOfImages});
+    totalImages = arrayOfImages.length
+    trainImagesLen.current = Math.floor(totalImages * (minValidate / 100));
+    validateImagesLen.current = Math.floor(totalImages * (maxValidate / 100));
     setFiles(arrayOfImages);
   };
   const handlevalidateChange = (event, newValue) => {
     event.preventDefault();
-    // console.log("change");
     setminValidate(newValue[0]);
     setmaxValidate(newValue[1]);
-    totalImages = files.length;
-    trainImagesLen = Math.floor(totalImages * (minValidate / 100));
-    trainImages = files.slice(0, trainImagesLen);
   };
 
   //Export images
   const exportZip = () => {
-    console.log(files);
-    // const {arrayOfImages} = files;
     var train = zip.folder("train");
     var test = zip.folder("test");
     var validate = zip.folder("validate");
 
-    totalImages = files.length;
-    console.log(totalImages);
-    trainImagesLen = Math.floor(totalImages * (minValidate / 100));
-    validateImagesLen = Math.floor(totalImages * (maxValidate / 100));
-
-    console.log(validateImagesLen);
-    console.log(trainImagesLen);
-
-    console.log(" train Images", trainImages.length);
-    console.log(" Validate Images", validateImages.length);
-
-    trainImages = files.slice(0, trainImagesLen);
-    validateImages = files.slice(trainImagesLen, validateImagesLen);
-    testImages = files.slice(validateImagesLen, totalImages);
+    trainImages = files.slice(0, trainImagesLen.current);
+    validateImages = files.slice(trainImagesLen.current, validateImagesLen.current);
+    testImages = files.slice(validateImagesLen.current, totalImages);
 
     // Item showing in text file
     var trainFileName = trainImages.map((item) => {
@@ -223,10 +218,10 @@ function ImageTrain() {
             </Typography>
 
             <PrettoSlider
-              valueLabelDisplay="auto"
               aria-label="pretto slider"
+              track={false}
               value={[minValidate, maxValidate]}
-              step={10}
+              step={1}
               onChange={handlevalidateChange}
               className="gutterBtn"
             />
