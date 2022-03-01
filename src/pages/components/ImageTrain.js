@@ -125,8 +125,10 @@ function ImageTrain() {
     var validate = zip.folder("validate");
 
     totalImages = files.length;
+    console.log(totalImages);
     trainImagesLen = Math.floor(totalImages * (minValidate / 100));
     validateImagesLen = Math.floor(totalImages * (maxValidate / 100));
+
     console.log(validateImagesLen);
     console.log(trainImagesLen);
 
@@ -181,7 +183,7 @@ function ImageTrain() {
         </div>
         <p>
           Rebalance Your Dataset, if Yes select or Default set at train = 70%,
-          Valid = 30%, test = 10%
+          valid = 20%, test = 10%
         </p>
         <div className="input-div">
           <div style={{ marginRight: "100px" }}>

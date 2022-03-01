@@ -10,7 +10,7 @@
   width: 50%;
   margin-left: 25%;
   color: #fff;
-  height: 80vh;
+  height: 78vh;
 
   font-weight: 600;
   .file-inputs {
@@ -45,7 +45,7 @@
     0 0 0.2em rgb(13, 13, 14);
   font-weight: 500;
   color: rgb(239, 247, 168);
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 ::-webkit-file-upload-button {
@@ -76,7 +76,7 @@
   margin-bottom: 1px;
   width: 300px;
   margin-right: 530px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .btn-wrapper .btn-default {
   font-weight: 1000;
@@ -167,8 +167,6 @@
 .main {
   font-weight: 700;
   font-size: large;
-  margin-bottom: 0.4rem;
-  margin-top: 1.5rem;
   transition: background-color 0.4s;
   text-shadow: red 0 -1px;
 }
