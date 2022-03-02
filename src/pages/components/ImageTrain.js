@@ -139,13 +139,13 @@ function ImageTrain() {
 
     // Item showing in text file
     var trainFileName = trainImages.map((item) => {
-      return item.number;
+      return item.number + "\n";
     });
     var validateFileName = validateImages.map((item) => {
-      return item.number;
+      return item.number + "\n";
     });
     var testFileName = testImages.map((item) => {
-      return item.number;
+      return item.number + "\n";
     });
 
     trainImages.map((image) => {
