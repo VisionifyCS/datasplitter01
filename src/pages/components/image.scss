@@ -5,12 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 1px 1px 2px rgba(157, 240, 157, 0.5);
   background-color: transparent;
   width: 50%;
   margin-left: 25%;
   color: #fff;
-  height: 78vh;
 
   font-weight: 600;
   .file-inputs {
@@ -29,31 +27,30 @@
   }
 }
 
+.file-card .mainTitle {
+  font-size: 40px;
+}
+
 //upload file section
 
 .upload-box {
-  font-size: 15px;
-  background: transparent;
-  box-shadow: 0px 0px 1px 2px rgba(157, 240, 157, 0.5);
+  font-size: 19px;
+  background: white;
   border-radius: 50px;
-  width: 350px;
+  width: 500px;
   outline: none;
-  height: 39px;
+  height: 45px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 2px;
-  text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(1, 1, 10),
-    0 0 0.2em rgb(13, 13, 14);
-  font-weight: 500;
-  color: rgb(239, 247, 168);
+  color: rgb(17, 17, 17);
   margin-bottom: 50px;
 }
 
 ::-webkit-file-upload-button {
-  color: black;
+  color: grey;
   border: none;
   padding: 11px;
   border-radius: 50px;
-  box-shadow: 1px 0 1px 1px #fff;
   outline: none;
   cursor: pointer;
 }
@@ -61,8 +58,6 @@
 ::-webkit-file-upload-button:hover {
   background: #fff;
   font-weight: 500;
-  text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(1, 1, 10),
-    0 0 0.2em rgb(13, 13, 14);
   color: black;
 }
 //////////////////---//////////////////
@@ -79,27 +74,26 @@
   margin-bottom: 20px;
 }
 .btn-wrapper .btn-default {
-  font-weight: 1000;
+  font-weight: 500;
   width: 100%;
   cursor: pointer;
   height: 39px;
   border-radius: 50px;
-  background: transparent;
+  background: white;
   border-radius: 50px;
-  box-shadow: 0px 0px 1px 2px rgba(157, 240, 157, 0.5);
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .btn-wrapper .btn-default:hover {
-  background-color: #fff;
+  background-color: black;
   text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(1, 1, 10),
     0 0 0.2em rgb(13, 13, 14);
-  color: black;
+  color: white;
   font-weight: 500;
 }
 
@@ -141,8 +135,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(46, 33, 8);
-  color: #fff;
+  background-color: white;
+  color: black;
   transition: transform 0.8s; /* Animation */
   flex-direction: column;
   font-size: 15px;
@@ -167,8 +161,6 @@
 .main {
   font-weight: 700;
   font-size: large;
-  transition: background-color 0.4s;
-  text-shadow: red 0 -1px;
 }
 
 .input-div {

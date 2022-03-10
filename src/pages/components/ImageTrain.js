@@ -170,6 +170,7 @@ function ImageTrain() {
   return (
     <>
       <div className="file-card" id="place-to-visit">
+        <h1 className="mainTitle">DataSpitter Files Uploader</h1>
         <div className="file-inputs">
           <p>Upload Your Files Here</p>
           <input

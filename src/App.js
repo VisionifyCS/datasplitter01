@@ -13,9 +13,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundColor: "#0b0c0c",
+    backgroundColor: "#757f9a",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundImage: "linear-gradient(147deg, #757f9a 0%, #d7dde8 100%)",
   },
   footerInfo: {
     color: "#fff",
