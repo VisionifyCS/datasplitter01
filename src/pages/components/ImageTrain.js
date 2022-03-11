@@ -73,7 +73,7 @@ function ImageTrain() {
   const [files, setFiles] = useState([]);
   const [minValidate, setminValidate] = useState(70);
   const [maxValidate, setmaxValidate] = useState(90);
-  const [inputValue, setInputValue] = useState("upload");
+  // const [inputValue, setInputValue] = useState("upload");
   const [trainRange, setTrainRange] = useState(0);
   const [ValidRange, setValidRange] = useState(0);
   const [testRange, setTestRange] = useState(0);
